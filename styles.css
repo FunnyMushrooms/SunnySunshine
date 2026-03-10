@@ -159,54 +159,148 @@ p {
 }
 
 .hero-visual {
-  min-height: 360px;
+  min-height: 420px;
   border: 1px solid var(--border);
   border-radius: 24px;
   position: relative;
-  background: linear-gradient(165deg, rgba(49, 168, 255, 0.15), rgba(255, 95, 31, 0.09));
+  background: radial-gradient(circle at 72% 16%, rgba(255, 95, 31, 0.22), transparent 42%),
+    radial-gradient(circle at 20% 90%, rgba(49, 168, 255, 0.25), transparent 48%),
+    #070f1f;
   overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
-.card {
+.morph-scene {
+  position: relative;
+  width: min(380px, 86%);
+  text-align: center;
+}
+
+.morph-halo {
   position: absolute;
-  border: 1px solid var(--border);
-  background: rgba(10, 18, 34, 0.85);
-  border-radius: 14px;
-  padding: 1rem;
-}
-
-.card-main {
-  top: 16%;
-  left: 10%;
-  width: 58%;
-}
-
-.card-secondary {
-  right: 9%;
-  bottom: 14%;
-  width: 52%;
-}
-
-.orb {
-  position: absolute;
+  inset: 8% 12%;
   border-radius: 50%;
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(49, 168, 255, 0.45), rgba(49, 168, 255, 0) 65%);
+  filter: blur(14px);
+  animation: halo-shift 8s ease-in-out infinite;
 }
 
-.orb-one {
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 95, 31, 0.4);
-  top: -24px;
-  right: -16px;
+.focus-object {
+  position: relative;
+  width: min(320px, 100%);
+  margin: 0 auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(164, 185, 221, 0.45);
+  background: linear-gradient(160deg, rgba(13, 24, 45, 0.96), rgba(8, 14, 28, 0.85));
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.08), 0 0 55px rgba(49, 168, 255, 0.26);
+  animation: object-morph 8s cubic-bezier(0.55, 0.08, 0.4, 0.97) infinite;
 }
 
-.orb-two {
-  width: 180px;
-  height: 180px;
-  background: rgba(49, 168, 255, 0.3);
-  bottom: -40px;
-  left: -30px;
+.focus-object::before {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border: 1px solid rgba(49, 168, 255, 0.6);
+  background: linear-gradient(135deg, rgba(49, 168, 255, 0.75), rgba(255, 95, 31, 0.65));
+  box-shadow: 0 0 28px rgba(255, 95, 31, 0.4);
+  animation: core-morph 8s cubic-bezier(0.55, 0.08, 0.4, 0.97) infinite;
+}
+
+.object-state {
+  position: absolute;
+  left: 50%;
+  bottom: -2.2rem;
+  transform: translateX(-50%);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4e3ff;
+  transition: opacity 0.5s ease;
+}
+
+.state-b {
+  opacity: 0;
+}
+
+.morph-caption {
+  margin-top: 3rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+
+@keyframes object-morph {
+  0%,
+  38%,
+  100% {
+    border-radius: 22% 22% 30% 30% / 18% 18% 42% 42%;
+    clip-path: polygon(50% 0%, 85% 16%, 85% 52%, 69% 92%, 31% 92%, 15% 52%, 15% 16%);
+    transform: rotate(0deg) scale(1);
+  }
+  50%,
+  88% {
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    transform: rotate(180deg) scale(1.05);
+  }
+}
+
+@keyframes core-morph {
+  0%,
+  38%,
+  100% {
+    border-radius: 16% 16% 34% 34% / 24% 24% 40% 40%;
+    clip-path: polygon(50% 5%, 77% 18%, 77% 52%, 62% 88%, 38% 88%, 23% 52%, 23% 18%);
+  }
+  50%,
+  88% {
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+  }
+}
+
+@keyframes halo-shift {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.58;
+  }
+}
+
+.focus-object .state-a {
+  animation: label-a 8s linear infinite;
+}
+
+.focus-object .state-b {
+  animation: label-b 8s linear infinite;
+}
+
+@keyframes label-a {
+  0%,
+  42%,
+  100% {
+    opacity: 1;
+  }
+  50%,
+  92% {
+    opacity: 0;
+  }
+}
+
+@keyframes label-b {
+  0%,
+  42%,
+  100% {
+    opacity: 0;
+  }
+  50%,
+  92% {
+    opacity: 1;
+  }
 }
 
 .section {
@@ -299,5 +393,13 @@ p {
 
   .hero {
     padding-top: 3.2rem;
+  }
+
+  .morph-scene {
+    width: min(320px, 92%);
+  }
+
+  .focus-object {
+    width: 100%;
   }
 }

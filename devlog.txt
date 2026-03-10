@@ -15,3 +15,17 @@ Iteration 3
 - Added `.nojekyll` to ensure static assets are served without Jekyll processing.
 - Updated README with local run and GitHub Pages setup steps.
 - Re-checked repository for `dental.png`; file is still missing, so telegram/web interaction flow alignment cannot yet be validated against that visual reference.
+
+Iteration 4
+- Added a morphing visual element in the hero panel to make the page feel more "awesome" and dynamic: a shape that transitions between a defensive rectangular form (Firewall Core) and an organic star-like form (AI Sentinel).
+- Updated `index.html` with a new `morph-stage` block and updated `styles.css` with keyframe-based morph animation, glow treatment, and mobile adjustments.
+- Reviewed repository again for `dental.png`; it is still not present in the project files, so I could not compare telegram/web flows from that reference image yet.
+- Discussion note: once `dental.png` is available, I will cross-map the top (telegram) and bottom (web) action flows against current sections and suggest exact content/interaction alignment gaps.
+
+Iteration 5
+- Reworked hero graphics to focus on a single centerpiece object instead of multiple floating cards.
+- Implemented a staged morph sequence where one object clearly transitions between two recognizable forms: `Shield Node` -> `Sentinel Orb`, with synchronized inner-core morph, halo pulse, and label transitions.
+- Removed previous multi-element hero clutter and tuned the composition to feel closer to high-end motion-centric sites (single focal object + atmospheric glow).
+- Updated responsive rules to keep the morph object centered and readable on smaller screens.
+- Re-checked repository for `dental.png`; file is still missing, so telegram/web action-flow comparison is still blocked until the image is provided.
+- Discussion note: once `dental.png` is added, I will map each required top/bottom flow action to matching web sections and propose any missing interaction states.
