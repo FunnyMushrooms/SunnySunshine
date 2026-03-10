@@ -62,6 +62,3 @@ GitHub Pages workflow (`.github/workflows/deploy-pages.yml`) builds with Node 20
 - Replace static `scenarios` and `industries` data in `src/config/content.ts` with CMS/API payloads.
 - Wire contact form to backend endpoint in `src/App.tsx` form submit handler.
 - Replace simulated threat globe data generation with real telemetry adapter.
-
-## GitHub Pages base-path fix
-This app uses Vite `base: "./"` so built assets are referenced relatively (`./assets/...`), which avoids GitHub Pages project-site path issues (including `/SunnySunshine/` deployments).
