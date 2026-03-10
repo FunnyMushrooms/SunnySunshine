@@ -1,0 +1,17 @@
+Iteration 1
+- Received request to rebuild site in style of igloo.inc with cybersecurity theme/colors inspired by ironcyber.com.
+- Checked repository contents: only README.md existed, no devlog.txt or dental.png present.
+- Proceeded with a fresh static landing page implementation (index.html + styles.css).
+- Included hero, solutions, framework process, CTA, and contact footer with dark blue/orange cyber palette.
+- Note: dental.png was not found in the repository, so its flow could not be reviewed yet.
+
+Iteration 2
+- Ran local preview server and captured a full-page screenshot of the landing page.
+- Verified static page is served correctly and visual structure aligns with requested cyber-themed redesign.
+- Will report that dental.png is still missing; request clarification/upload in next cycle to ensure no flow/action requirements are missed.
+
+Iteration 3
+- Implemented GitHub Pages deployment support using GitHub Actions workflow (`.github/workflows/deploy-pages.yml`).
+- Added `.nojekyll` to ensure static assets are served without Jekyll processing.
+- Updated README with local run and GitHub Pages setup steps.
+- Re-checked repository for `dental.png`; file is still missing, so telegram/web interaction flow alignment cannot yet be validated against that visual reference.
