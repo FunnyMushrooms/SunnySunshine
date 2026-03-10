@@ -29,3 +29,28 @@ Iteration 5
 - Updated responsive rules to keep the morph object centered and readable on smaller screens.
 - Re-checked repository for `dental.png`; file is still missing, so telegram/web action-flow comparison is still blocked until the image is provided.
 - Discussion note: once `dental.png` is added, I will map each required top/bottom flow action to matching web sections and propose any missing interaction states.
+
+Iteration 6
+- Rebuilt the entire site structure into an "IronCyber 2.0" immersive single-page experience with new sections matching requested narrative flow: Why IronCyber, Ukrainian Expertise, Services, Case Studies, Team, and Contact.
+- Added a pointer-reactive hero energy canvas (red/blue particle field), glitch labeling, text-scramble headlines, reveal-on-scroll transitions, and an animated particle-cluster module for interactive storytelling.
+- Added responsive mobile navigation, skip-link and semantic accessibility improvements, and a WebGL2 capability check with graceful fallback behavior.
+- Updated README with architecture overview and run/deploy notes for the rebuilt implementation.
+- Re-checked the workspace for `dental.png`; it is still missing, so I cannot directly validate the exact telegram/web action map from that reference image.
+- Discussion note: despite the missing image, I aligned the information architecture to a likely top-flow (messaging -> qualification -> contact) and bottom-flow (discovery -> service exploration -> case confidence -> form submission) model; once `dental.png` is provided, I can map every flow/action explicitly and close any gaps.
+
+Iteration 7
+- Replaced the prior static implementation with a modern Vite + React + TypeScript architecture to support a flagship-level immersive build that is maintainable and extensible.
+- Implemented a WebGL-driven hero (red-vs-blue energy forms), chapter-based storytelling sections, a data-driven scenarios layer, an interactive threat globe visualization, and a replayable defense-grid gamified module.
+- Added global shell controls for sound-state and motion-state, included reduced-motion support, and preserved conversion-critical content in semantic HTML for graceful fallback behavior.
+- Centralized reusable content/config in `src/config/content.ts` and rebuilt design tokens/layout in `src/styles/global.css`.
+- Updated GitHub Pages workflow to build/deploy Vite `dist/` artifacts and rewrote README with stack, architecture, performance/fallback strategy, and integration points.
+- Re-checked repository/workspace for `dental.png`; it is still missing, so I still cannot perform exact top (telegram) and bottom (web) flow/action parity validation against that source.
+- Discussion note: current structure is mapped to the likely intended web flow (awareness -> credibility -> scenarios -> proof -> interaction -> conversion); once `dental.png` is provided, I can do a strict action-by-action mapping and patch any flow gaps.
+
+Iteration 8
+- Investigated report that `https://funnymushrooms.github.io/SunnySunshine/` was not working after Vite migration.
+- Root cause: Vite `base` was left at default `/`, which breaks asset paths on project Pages (`/<repo>/`) deployments.
+- Fixed `vite.config.ts` to auto-derive repo base path in GitHub Actions builds via `GITHUB_REPOSITORY` and set `base` to `/<repo>/` (e.g., `/SunnySunshine/`), while keeping local dev base at `/`.
+- Updated README with a short deployment note describing the base-path behavior.
+- Re-checked workspace for `dental.png`; file is still missing, so exact telegram/web flow parity validation remains blocked.
+- Discussion note: once `dental.png` is provided, I will do explicit action-by-action mapping for top (telegram) and bottom (web) flows and patch any remaining flow gaps.
