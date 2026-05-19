@@ -46,3 +46,12 @@ Iteration 7
 - Updated GitHub Pages workflow to build/deploy Vite `dist/` artifacts and rewrote README with stack, architecture, performance/fallback strategy, and integration points.
 - Re-checked repository/workspace for `dental.png`; it is still missing, so I still cannot perform exact top (telegram) and bottom (web) flow/action parity validation against that source.
 - Discussion note: current structure is mapped to the likely intended web flow (awareness -> credibility -> scenarios -> proof -> interaction -> conversion); once `dental.png` is provided, I can do a strict action-by-action mapping and patch any flow gaps.
+
+Iteration 8
+- Replaced prior cyber showcase app with a new React + Vite + Tailwind + framer-motion + lucide-react implementation for “Guess the Cup. Read the Product.”
+- Added a full-screen password gate using Web Crypto SHA-256 comparison against the provided hash, with sessionStorage unlock state, sarcastic error handling, and required security warning comment in code.
+- Implemented 3-round shell-game CV flow with animated cup interactions, differentiated fraud round behavior (falling ball catch mechanic), and round-by-round iGaming product lessons/copy.
+- Added post-game interactive CV slide deck (Profile, iGaming value, Product domains, Delivery style) with animated slide transitions.
+- Updated Vite config base to `/igaming-shell-cv/` and added GitHub Pages Actions deployment workflow at `.github/workflows/deploy.yml`.
+- Simplified README with local run/build instructions.
+- Checked for `dental.png` again: still missing from repository, so direct top (telegram)/bottom (web) flow parity review remains blocked; implemented requested flow behavior based on current textual requirements.
