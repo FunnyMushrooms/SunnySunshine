@@ -55,3 +55,23 @@ Iteration 8
 - Updated Vite config base to `/igaming-shell-cv/` and added GitHub Pages Actions deployment workflow at `.github/workflows/deploy.yml`.
 - Simplified README with local run/build instructions.
 - Checked for `dental.png` again: still missing from repository, so direct top (telegram)/bottom (web) flow parity review remains blocked; implemented requested flow behavior based on current textual requirements.
+
+Iteration 9
+- Investigated runtime “resource loading error” symptom and validated project health with a production build.
+- Initial `npm run build` failed because required packages (`framer-motion`, `lucide-react`) were not present in `node_modules` in this environment.
+- Ran `npm install` to restore dependencies from `package-lock.json`, then re-ran `npm run build` successfully; Vite produced `dist/assets/index-CIltrwdp.css` and `dist/assets/index-Cfy_4Yy2.js`.
+- This indicates the app itself compiles correctly; the observed error is consistent with running without dependencies installed or opening generated asset files directly instead of serving the app through Vite/dev server or built `dist/` hosting.
+
+Iteration 10
+- Addressed feedback to add animated hands that visually shake/mix the cups during active rounds.
+- Updated `src/App.tsx` to render left/right hand emojis (`🫲`/`🫱`) with looping framer-motion transforms while the player is choosing.
+- Added cup shake motion during selection state so all three cups visibly shuffle before a pick.
+- Preserved existing flow logic (round progression, fraud catch mechanic, and CV deck unlock) while enhancing game feel.
+- Re-ran install/build validation: dependencies restored with `npm install`, then `npm run build` completed successfully.
+
+Iteration 11
+- Implemented a first-person table scene for the cup game to match feedback: cups now sit on a perspective wood table surface with depth/shadow styling.
+- Replaced emoji hands/cups with more realistic CSS-rendered hand and cup shapes, including continuous shuffle-style hand motion during active selection.
+- Moved gameplay/copy presentation onto in-scene board panels so all instructional/result text appears on styled “board” surfaces.
+- Preserved existing game logic (unlock gate, round progression, fraud catch behavior, and CV deck navigation) while changing visual presentation.
+- Revalidated build after updates.

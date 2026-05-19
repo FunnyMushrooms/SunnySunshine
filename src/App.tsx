@@ -69,17 +69,37 @@ export function App() {
   };
 
   if (!unlocked) {
-    return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-6"><div className="w-full max-w-xl rounded-3xl border border-red-500/30 bg-slate-900/70 backdrop-blur-xl p-8 shadow-2xl"><h1 className="text-3xl font-bold">Private Product Demo</h1><p className="mt-2 text-slate-300">A small shell game about iGaming product logic, risk, payments, and requirements.</p><div className="mt-6 flex gap-3"><input type="password" value={pwd} onChange={(e) => setPwd(e.target.value)} className="flex-1 rounded-xl bg-slate-800 border border-slate-700 px-4 py-3" placeholder="Enter password" /><button onClick={unlock} className="rounded-xl bg-blue-600 hover:bg-blue-500 px-5 py-3 font-semibold">Unlock</button></div><p className="mt-2 text-xs text-amber-300">Demo access only.</p>{error && <p className="mt-3 text-red-400">{error}</p>}</div></div>;
+    return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-6"><div className="board w-full max-w-xl rounded-3xl p-8"><h1 className="text-3xl font-bold">Private Product Demo</h1><p className="mt-2 text-slate-300">A first-person shell-game board about iGaming product logic, risk, payments, and requirements.</p><div className="mt-6 flex gap-3"><input type="password" value={pwd} onChange={(e) => setPwd(e.target.value)} className="flex-1 rounded-xl bg-slate-800 border border-slate-700 px-4 py-3" placeholder="Enter password" /><button onClick={unlock} className="rounded-xl bg-blue-600 hover:bg-blue-500 px-5 py-3 font-semibold">Unlock</button></div><p className="mt-2 text-xs text-amber-300">Demo access only.</p>{error && <p className="mt-3 text-red-400">{error}</p>}</div></div>;
   }
 
   const done = round >= rounds.length;
 
-  return <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 p-4 md:p-8"><div className="max-w-6xl mx-auto space-y-6"><section className="rounded-3xl bg-slate-900/60 border border-slate-700 p-6"><h2 className="text-2xl font-bold">Guess the Cup. Read the Product.</h2><p className="text-slate-300 mt-2">Business Analyst / Product BA candidate for iGaming · 10+ years in complex environments · Cybersecurity Master’s · B2 English · strong in requirements clarity, alignment, abuse-case thinking, delivery ownership, and adaptation under change.</p></section>
+  return <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 p-4 md:p-8"><div className="max-w-6xl mx-auto space-y-6">
+    <section className="board rounded-3xl p-6">
+      <h2 className="text-2xl font-bold">Guess the Cup. Read the Product.</h2>
+      <p className="text-slate-300 mt-2">Business Analyst / Product BA candidate for iGaming · 10+ years in complex environments · Cybersecurity Master’s · B2 English.</p>
+    </section>
 
-    {!done ? <section className="rounded-3xl border border-blue-500/30 bg-slate-900/60 p-6"><h3 className="text-xl font-semibold">{rounds[round].title}</h3><p className="text-sm text-slate-300 mt-2">Watch the mix. Pick a cup. Pretend uncertainty is not a requirement.</p><div className="mt-6 grid grid-cols-3 gap-4">{[0, 1, 2].map((i) => <motion.button key={i} whileHover={{ y: -6 }} onClick={() => setPicked(i)} disabled={picked !== null} className="h-28 rounded-2xl border border-slate-600 bg-gradient-to-b from-slate-700 to-slate-900 text-4xl">🥤</motion.button>)}</div>
-      {round === 2 && picked === null && <motion.button onClick={() => { setCaught(true); setPicked(winningCup); }} initial={{ y: -10 }} animate={{ y: [0, 220] }} transition={{ duration: 1.8 }} className="mx-auto mt-4 block text-3xl">⚪</motion.button>}
-      {picked !== null && <div className="mt-6 rounded-2xl border border-amber-400/40 bg-slate-800/60 p-4"><p className="font-semibold">{rounds[round].sarcastic}</p><p className="mt-2 text-slate-300">{rounds[round].lesson}</p><div className="mt-3 flex items-center gap-2 text-sm">{round === 1 && picked === winningCup && <><Coins size={16} /> Correct cup: cashier trust retained.</>}{round === 2 && (caught ? <><Lock size={16} /> Ball caught. Money leakage contained.</> : <><ShieldAlert size={16} /> Missed catch. All cups went empty.</>)}</div><button onClick={() => { setRound((r) => r + 1); setPicked(null); setCaught(false); }} className="mt-4 rounded-xl bg-red-600 hover:bg-red-500 px-4 py-2">Next round</button></div>}</section> :
-      <section className="rounded-3xl border border-emerald-500/30 bg-slate-900/60 p-6"><h3 className="text-xl font-semibold">CV Deck Unlocked</h3><AnimatePresence mode="wait"><motion.div key={slide} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -16 }} className="mt-4 rounded-2xl bg-slate-800/70 p-5"><h4 className="font-bold text-lg">{slides[slide][0]}</h4><ul className="mt-3 space-y-2 text-slate-300">{(slides[slide][1] as string[]).map((it) => <li key={it}>• {it}</li>)}</ul></motion.div></AnimatePresence><div className="mt-4 flex justify-between"><button onClick={() => setSlide((s) => Math.max(0, s - 1))} className="rounded-xl bg-slate-700 px-4 py-2">Prev</button><button onClick={() => setSlide((s) => Math.min(slides.length - 1, s + 1))} className="rounded-xl bg-blue-600 px-4 py-2">Next</button></div></section>}
+    {!done ? <section className="game-table rounded-3xl p-6">
+      <div className="board rounded-2xl p-4 mb-6">
+        <h3 className="text-xl font-semibold">{rounds[round].title}</h3>
+        <p className="text-sm text-slate-300 mt-2">First-person table view: watch hands shuffle the cups, then choose one.</p>
+      </div>
 
-    <div className="text-xs text-slate-400 flex items-center gap-2"><AlertTriangle size={14} /> Static demo for GitHub Pages.</div></div></main>;
+      <div className="table-surface">
+        {picked === null && <>
+          <motion.div aria-hidden="true" className="real-hand real-hand-left" animate={{ x: [0, 18, 0, 12, 0], rotate: [0, 10, -8, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.div aria-hidden="true" className="real-hand real-hand-right" animate={{ x: [0, -18, 0, -12, 0], rotate: [0, -10, 8, -6, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }} />
+        </>}
+
+        <div className="cup-lane">{[0, 1, 2].map((i) => <motion.button key={i} whileTap={{ scale: 0.97 }} animate={picked === null ? { x: [0, i === 1 ? 20 : -16, 0, i === 1 ? -20 : 16, 0] } : { x: 0 }} transition={picked === null ? { duration: 1.2, repeat: Infinity, ease: 'easeInOut' } : { duration: 0.15 }} onClick={() => setPicked(i)} disabled={picked !== null} className="real-cup" aria-label={`Pick cup ${i + 1}`} />)}</div>
+      </div>
+
+      {round === 2 && picked === null && <motion.button onClick={() => { setCaught(true); setPicked(winningCup); }} initial={{ y: -10 }} animate={{ y: [0, 210] }} transition={{ duration: 1.8 }} className="mx-auto mt-4 block text-3xl">⚪</motion.button>}
+
+      {picked !== null && <div className="board mt-6 rounded-2xl p-4"><p className="font-semibold">{rounds[round].sarcastic}</p><p className="mt-2 text-slate-300">{rounds[round].lesson}</p><div className="mt-3 flex items-center gap-2 text-sm">{round === 1 && picked === winningCup && <><Coins size={16} /> Correct cup: cashier trust retained.</>}{round === 2 && (caught ? <><Lock size={16} /> Ball caught. Money leakage contained.</> : <><ShieldAlert size={16} /> Missed catch. All cups went empty.</>)}</div><button onClick={() => { setRound((r) => r + 1); setPicked(null); setCaught(false); }} className="mt-4 rounded-xl bg-red-600 hover:bg-red-500 px-4 py-2">Next round</button></div>}
+    </section> :
+      <section className="board rounded-3xl p-6"><h3 className="text-xl font-semibold">CV Deck Unlocked</h3><AnimatePresence mode="wait"><motion.div key={slide} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -16 }} className="mt-4 rounded-2xl bg-slate-800/70 p-5"><h4 className="font-bold text-lg">{slides[slide][0]}</h4><ul className="mt-3 space-y-2 text-slate-300">{(slides[slide][1] as string[]).map((it) => <li key={it}>• {it}</li>)}</ul></motion.div></AnimatePresence><div className="mt-4 flex justify-between"><button onClick={() => setSlide((s) => Math.max(0, s - 1))} className="rounded-xl bg-slate-700 px-4 py-2">Prev</button><button onClick={() => setSlide((s) => Math.min(slides.length - 1, s + 1))} className="rounded-xl bg-blue-600 px-4 py-2">Next</button></div></section>}
+
+    <div className="board rounded-xl text-xs text-slate-400 flex items-center gap-2 p-3"><AlertTriangle size={14} /> Static demo for GitHub Pages.</div></div></main>;
 }
