@@ -1,0 +1,5 @@
+2026-05-19 Iteration 1
+- Scaffolded a Vite + React + Tailwind project for igaming-shell-cv.
+- Implemented password-gated linear shell-story experience with first-person table styling.
+- Added round progression, mixed cups, money-object storytelling, fraud catch interaction, and CV document deck.
+- Added GitHub Pages workflow and configured Vite base for /igaming-shell-cv/.
