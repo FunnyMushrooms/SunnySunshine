@@ -1,0 +1,1 @@
+export default function InsightCard({ insight }) { return <div className='absolute top-4 right-4 max-w-xs rounded-xl bg-black/30 backdrop-blur p-3 text-sm text-amber-50 border border-white/20'><p className='text-amber-300 font-semibold'>{insight.title}</p><p>{insight.text}</p></div> }

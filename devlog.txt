@@ -23,3 +23,8 @@
 - Pushed visual fidelity further with multi-layer lighting (god rays, vignette, film grain texture) and richer material shading.
 - Upgraded table/cup/ball/hand rendering details plus watch prop to increase first-person AAA-like scene depth.
 - Enhanced cinematic polish with stronger highlights, wood grain, and premium button/panel finishing while preserving gameplay behavior.
+
+2026-05-20 Iteration 6
+- Rebuilt the project into a cinematic tropical shell-story flow with PixiJS layered scene rendering and Framer Motion UI overlays.
+- Added password gate SHA-256 validation, scene-by-scene product dialogue flow, fraud hand-click behavior, bonus keep/switch interaction, and end-of-story CV folder deck.
+- Updated Vite base to /igaming-shell-cv/, ensured GitHub Pages deployment workflow, and refreshed dependencies to include pixi.js.
