@@ -1,0 +1,1 @@
+export default function CVPage({ p }) { return <div><h2 className='text-2xl font-semibold'>{p.title}</h2><ul className='mt-3 list-disc pl-5 space-y-1'>{p.items.map(i=><li key={i}>{i}</li>)}</ul></div> }
