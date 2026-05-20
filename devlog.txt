@@ -8,3 +8,18 @@
 - Fixed Vite GitHub Pages base path handling to auto-detect user/org pages repos versus project repos.
 - Added README troubleshooting for 404 `/src/main.jsx` and exact Pages settings (Source: GitHub Actions) .
 - Repaired build pipeline by switching PostCSS plugin to `@tailwindcss/postcss` and adding the package.
+
+2026-05-20 Iteration 3
+- Reworked UI to a cinematic warm casino-table layout with dark/gold palette and side panels.
+- Restyled cups, chips, overlays, and document presentation to match the provided reference direction.
+- Preserved shell-game flow mechanics while updating visual hierarchy and copy tone.
+
+2026-05-20 Iteration 4
+- Expanded scene composition with explicit first-person hands, cash stack, and table note props.
+- Added backdrop depth layers and richer table object styling to better match full reference feel.
+- Kept game logic intact while improving physical storytelling cues on the table.
+
+2026-05-20 Iteration 5
+- Pushed visual fidelity further with multi-layer lighting (god rays, vignette, film grain texture) and richer material shading.
+- Upgraded table/cup/ball/hand rendering details plus watch prop to increase first-person AAA-like scene depth.
+- Enhanced cinematic polish with stronger highlights, wood grain, and premium button/panel finishing while preserving gameplay behavior.
