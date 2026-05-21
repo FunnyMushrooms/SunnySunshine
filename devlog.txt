@@ -28,3 +28,7 @@
 - Rebuilt the project into a cinematic tropical shell-story flow with PixiJS layered scene rendering and Framer Motion UI overlays.
 - Added password gate SHA-256 validation, scene-by-scene product dialogue flow, fraud hand-click behavior, bonus keep/switch interaction, and end-of-story CV folder deck.
 - Updated Vite base to /igaming-shell-cv/, ensured GitHub Pages deployment workflow, and refreshed dependencies to include pixi.js.
+
+2026-05-21 Iteration 7
+- Deleted all repository contents except `devlog.txt` as requested.
+- Kept `.git` metadata intact to preserve version history and allow committing the deletion.

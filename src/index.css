@@ -1,7 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body{margin:0;font-family:Inter,system-ui,sans-serif}
-.tropical{background:linear-gradient(180deg,#ffe4b1,#f3b775 40%,#d28b5d)}
-.btn{border-radius:12px;background:rgba(252,211,77,.9);color:#292524;padding:.5rem 1rem;font-weight:600;border:1px solid rgba(255,251,235,.5);box-shadow:0 8px 24px rgba(0,0,0,.25)}
