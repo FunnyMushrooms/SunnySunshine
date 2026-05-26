@@ -20,3 +20,5 @@ If you are developing a production application, we recommend using TypeScript wi
 
 This repo publishes to `https://funnymushrooms.github.io/SunnySunshine/`, so Vite `base` must be `/SunnySunshine/`.
 If assets/scripts 404 in production, verify `vite.config.js` keeps that base path.
+
+The deploy workflow currently triggers on pushes to `main` and `work` to support this repository's active development branch.
