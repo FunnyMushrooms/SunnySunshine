@@ -49,3 +49,9 @@
 - Replaced binary asset `src/assets/hero.png` with text-based SVG placeholder (`src/assets/hero-placeholder.svg`) to avoid binary-file transport issues.
 - Kept gameplay logic unchanged; this iteration is focused on repository compatibility with codex file-transfer limits.
 - Re-ran lint/build checks after the asset format change.
+
+
+2026-05-26 Iteration 11
+- Fixed GitHub Pages deployment path mismatch by changing Vite `base` from `/igaming-shell-cv/` to `/SunnySunshine/` for `https://funnymushrooms.github.io/SunnySunshine/`.
+- Added README note documenting the required Pages base path and quick 404 troubleshooting hint.
+- Re-ran lint and production build to verify the site builds correctly with the new base path.
