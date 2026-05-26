@@ -66,3 +66,17 @@
 - Updated GitHub Pages workflow trigger to run on pushes to both `main` and `work` so deployments run from the active branch.
 - Added README note clarifying deploy trigger branches for repository updates.
 - Re-ran lint and production build to confirm no regressions.
+
+2026-05-26 Iteration 14
+- Improved readability and contrast by moving overlays to darker translucent panels and changing the scene background to a dark casino-like palette.
+- Added active cup tossing motion with visible ball movement/blink during the choice phase, plus fixed static camera framing for a stable table-view experience.
+- Implemented live money transfer feedback (player/dealer bankroll updates) on wins/losses and switch decisions.
+- Enlarged the table and added extra tabletop details (felt layer and chips) to make the 3D scene feel more game-like.
+- Repositioned scene prompts and dealer subtitles to the bottom area for better subtitle-style presentation.
+
+2026-05-26 Iteration 15
+- Pushed visual direction closer to the provided reference with a darker tropical-noir ambience, warm spotlight feel, and cinematic gradient overlay.
+- Reinforced static first-person table framing while enlarging the table/felt footprint and tuning cup material colors toward metallic bronze.
+- Added a prominent top title block and widened bottom UI cards to mimic game briefing + subtitle composition from the vision board.
+- Kept active cup/ball movement and bankroll transfer flow while refining contrast and panel styling for readability.
+- Re-ran lint and build checks after the styling/layout pass.
