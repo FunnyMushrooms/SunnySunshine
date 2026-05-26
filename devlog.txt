@@ -32,3 +32,20 @@
 2026-05-21 Iteration 7
 - Deleted all repository contents except `devlog.txt` as requested.
 - Kept `.git` metadata intact to preserve version history and allow committing the deletion.
+
+2026-05-25 Iteration 8
+- Recreated the project after cleanup as a Vite + React experience and kept `game.txt` unchanged.
+- Implemented a WebGPU-first Babylon.js 3D table scene with WebGL fallback and browser capability message.
+- Added password gate with SHA-256 check, cinematic subtitle/insight overlays, linear scene progression, and final CV/contact reveal.
+- Configured Tailwind/PostCSS, Vite base `/igaming-shell-cv/`, and prepared dependencies for GitHub Pages static deployment.
+
+2026-05-26 Iteration 9
+- Reworked `src/App.jsx` to add actual scene interaction flow: cup picking, fraud hand option, bonus keep/switch decision, and gated continue progression.
+- Improved cinematic overlay behavior with per-scene prompts, result subtitles, and scene-completion controls tied to interaction outcomes.
+- Revalidated static password gate, WebGPU-first / WebGL-fallback renderer messaging, and final CV/contact reveal flow.
+- Ran lint and production build checks to confirm project health.
+
+2026-05-26 Iteration 10
+- Replaced binary asset `src/assets/hero.png` with text-based SVG placeholder (`src/assets/hero-placeholder.svg`) to avoid binary-file transport issues.
+- Kept gameplay logic unchanged; this iteration is focused on repository compatibility with codex file-transfer limits.
+- Re-ran lint/build checks after the asset format change.
